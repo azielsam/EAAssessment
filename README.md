@@ -53,11 +53,11 @@ contract Error {
 
 
 ```
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar and then click on the "Compile [file_name].sol" button. Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Under deployed contracts, you should see the token name, token abbreviation and current total supply of your choice.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar and then click on the "Compile [file_name].sol" button. Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. 
 
 To check if the code works as it should, you can deploy the contract by selecting the "Deploy & Run Transactions" tab from the left-hand sidebar once the code has been compiled. After choosing the "Error" contract from the drop-down menu, press the "Deploy" button.
 
-Once the contract is deployed, you can interact with it by trying to deposit and withdraw by entering an amount on its tab and check the balances. 
+Once the contract is deployed, you should see the functions that you made. you can interact with it by trying to deposit and withdraw by entering an amount on its tab and check the balances. 
 
 Thank you!
 
