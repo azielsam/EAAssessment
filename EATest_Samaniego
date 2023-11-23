@@ -25,7 +25,7 @@ contract Error {
         value = _newValue;
     }
 
-    function failOperation() external onlyOwner {
+    function failOperation() external pure {
         // Use revert() to revert the transaction
         revert("This transaction has been reverted");
     }
