@@ -17,7 +17,7 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract ExampleContract {
+contract Error {
     address public owner;
     uint256 public value;
 
@@ -41,7 +41,7 @@ contract ExampleContract {
         value = _newValue;
     }
 
-    function failOperation() external onlyOwner {
+    function failOperation() external pure {
         // Use revert() to revert the transaction
         revert("This transaction has been reverted");
     }
