@@ -14,43 +14,38 @@ To run this program, you can use Remix, an online Solidity IDE. To get started, 
 
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Here is an example code of my error handling:
 ```
-
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.18;
+pragma solidity ^0.8.0;
 
-contract Error {
-    uint public balance;
+contract ExampleContract {
+    address public owner;
+    uint256 public value;
 
-    function deposit(uint _amount) public {
-        // Use require() to check a condition
-        require(_amount > 0, "Deposit amount must be greater than 0");
-
-        // Update the balance
-        balance += _amount;
+    constructor() {
+        owner = msg.sender;
     }
 
-    function withdraw(uint _amount) public {
-        // Use require() to check a condition
-        require(_amount > 0 && _amount <= balance, "Invalid withdrawal amount");
-
-        // Update the balance
-        balance -= _amount;
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the owner can call this function");
+        _;
     }
 
-    function testAssert(uint _a, uint _b) public pure returns (uint) {
+    function setValue(uint256 _newValue) external onlyOwner {
+        // Use require() to check a condition
+        require(_newValue > 0, "Value must be greater than 0");
+
         // Use assert() to check an invariant
-        assert(_a + _b >= _a);
+        assert(_newValue != value);
 
-        // Return the sum
-        return _a + _b;
+        // Update the value
+        value = _newValue;
     }
 
-    function testRevert() public pure {
+    function failOperation() external onlyOwner {
         // Use revert() to revert the transaction
         revert("This transaction has been reverted");
     }
 }
-
 
 ```
 To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar and then click on the "Compile [file_name].sol" button. Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. 
